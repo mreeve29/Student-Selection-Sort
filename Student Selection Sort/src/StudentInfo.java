@@ -96,11 +96,6 @@ public class StudentInfo{
 		return finalAverage;
 	}
 	
-	//remove me
-	public void setFinalAverage(double a) {
-		finalAverage = a;
-	}
-	
 	public String getInfo() {
 		String info = "";
 		info += "Name: " + getName() + '\n'+
@@ -109,7 +104,6 @@ public class StudentInfo{
 				"Homework Average: " + getHWAverage() + "\n" +
 				"Final Average: " + getFinalAverage();
 		return info;
-		
 	}
 
 }

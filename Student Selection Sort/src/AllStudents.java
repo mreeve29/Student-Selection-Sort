@@ -19,7 +19,7 @@ public class AllStudents {
 		for(int i = 0; i < sorted.size()-1; i++) {
 			int min_index = i;
 			for(int j = i+1; j < sorted.size(); j++) {
-				if(averages.get(j) < averages.get(min_index)) {
+				if(averages.get(j) > averages.get(min_index)) {
 					min_index = j;
 				}
 			}
@@ -48,7 +48,7 @@ public class AllStudents {
 		for(int i = 0; i < sorted.size()-1; i++) {
 			int min_index = i;
 			for(int j = i+1; j < sorted.size(); j++) {
-				if(names.get(j).compareTo(names.get(min_index)) < 0) {
+				if(names.get(j).toLowerCase().compareTo(names.get(min_index).toLowerCase()) < 0) {
 					min_index = j;
 				}
 			}

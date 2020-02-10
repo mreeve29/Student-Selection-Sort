@@ -101,8 +101,8 @@ public class AddStudentDialog extends GBDialog {
 		quizes = new ArrayList<Double>();
 		
 		setTitle("Add Student");
+		setSize(700,750);
 		setVisible(true);
-		setSize(400,400);
 	}
 
 	private void updateTests(){	
