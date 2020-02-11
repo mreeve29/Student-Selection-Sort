@@ -84,6 +84,7 @@ public class AddStudentDialog extends GBDialog {
 			int response = JOptionPane.showConfirmDialog(null,"Are you sure you want to add: \n" + getStudentInfo(), "Add " + nameField.getText() + "?", JOptionPane.YES_NO_OPTION);
 			if(response == JOptionPane.YES_OPTION) {
 				as.addStudent(new StudentInfo(nameField.getText(),tests,quizes,hwAverage));
+				this.dispose();
 			}
 		}
 	}

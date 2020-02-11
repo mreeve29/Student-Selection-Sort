@@ -27,8 +27,11 @@ public class StudentInfo{
 	private double calculateFinalAverage() {
 		//final average=0.5(Test Average)+0.3(Quiz Average)+0.2( Homework Average)
 		double test = average(tests);
+		if(Double.isNaN(test))test = 0;
 		double quiz = average(quizes);
-		return 0.5 * test + 0.3 * quiz + 0.2 * hwAverage;
+		if(Double.isNaN(quiz))quiz = 0;
+		double average = 0.5 * test + 0.3 * quiz + 0.2 * hwAverage;
+		return average;
 	}
 	
 	private double average(ArrayList<Double> t) {

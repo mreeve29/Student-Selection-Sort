@@ -34,42 +34,42 @@ public class Statistics {
 	}
 	
 	//finds the mode(s)
-		public ArrayList<Double> getModes() throws NoModeException{
-			setAverages();
-			ArrayList<Double> key = new ArrayList<Double>();
-			ArrayList<Double> value = new ArrayList<Double>();
-			
-			for(double i : averages) {
-				if(!key.contains(i)) {
-					key.add(i);
-					value.add(0.0);
-				}
+	public ArrayList<Double> getModes() throws NoModeException{
+		setAverages();
+		ArrayList<Double> key = new ArrayList<Double>();
+		ArrayList<Double> value = new ArrayList<Double>();
+		
+		for(double i : averages) {
+			if(!key.contains(i)) {
+				key.add(i);
+				value.add(0.0);
 			}
-			for(double i : averages) {
-				int current = key.indexOf(i);
-				value.set(current, value.get(current) + 1);
-			}
-			
-			ArrayList<Double> modes = new ArrayList<Double>();
-			
-			double highestOcc = 0;
-			
-			for(int i = 0; i < value.size(); i++) {
-				if(value.get(i) > highestOcc) {
-					modes.clear();
-					modes.add(key.get(i));
-					highestOcc = value.get(i);
-				}else if (value.get(i) == highestOcc) {
-					modes.add(key.get(i));
-				}
-			}
-			
-			if(highestOcc == 1 && averages.size() >  1) {
-				throw new NoModeException("No Mode in List");
-			}
-			
-			return modes;
 		}
+		for(double i : averages) {
+			int current = key.indexOf(i);
+			value.set(current, value.get(current) + 1);
+		}
+		
+		ArrayList<Double> modes = new ArrayList<Double>();
+		
+		double highestOcc = 0;
+		
+		for(int i = 0; i < value.size(); i++) {
+			if(value.get(i) > highestOcc) {
+				modes.clear();
+				modes.add(key.get(i));
+				highestOcc = value.get(i);
+			}else if (value.get(i) == highestOcc) {
+				modes.add(key.get(i));
+			}
+		}
+		
+		if(highestOcc == 1 && averages.size() >  1) {
+			throw new NoModeException("No Mode in List");
+		}
+		
+		return modes;
+	}
 	
 	//calculates standard deviation
 	public double getStandardDeviation() {
