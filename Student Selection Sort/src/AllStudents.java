@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class AllStudents {
 	private ArrayList<StudentInfo> students;
+	public static final int MAX_STUDENTS = 15;
 	
 	public AllStudents() {
 		students = new ArrayList<StudentInfo>();
@@ -73,6 +74,10 @@ public class AllStudents {
 	
 	public ArrayList<StudentInfo> getStudents(){
 		return students;
+	}
+	
+	public int size() {
+		return students.size();
 	}
 	
 	

@@ -32,21 +32,34 @@ public class StudentSortGUI extends GBFrame{
 	
 	public void buttonClicked(JButton button) {
 		if(button == addStudentButton) {
-			new AddStudentDialog(this, allStudents);
+			if(allStudents.size() < AllStudents.MAX_STUDENTS) {
+				new AddStudentDialog(this, allStudents);
+			}else {
+				messageBox("Cannot add anymore students, max: " + AllStudents.MAX_STUDENTS);
+			}
+			
 		}else if(button == nameSortButton) {
-			ArrayList<StudentInfo> sorted = allStudents.nameSort();
-			String msg = "Students by name:\n";
-			for(StudentInfo s : sorted) {
-				msg += s.getInfo() + "\n\n";
+			if(allStudents.size() == 0) {
+				messageBox("There are no students");
+			}else {
+				ArrayList<StudentInfo> sorted = allStudents.nameSort();
+				String msg = "Students by name:\n";
+				for(StudentInfo s : sorted) {
+					msg += s.getInfo() + "\n\n";
+				}
+				messageBox(msg);
 			}
-			messageBox(msg);
 		}else if(button == averageSortButton) {
-			ArrayList<StudentInfo> sorted = allStudents.averageSort();
-			String msg = "Students by final average:\n";
-			for(StudentInfo s : sorted) {
-				msg += s.getInfo() + "\n\n";
+			if(allStudents.size() == 0) {
+				messageBox("There are no students");
+			}else {
+				ArrayList<StudentInfo> sorted = allStudents.averageSort();
+				String msg = "Students by final average:\n";
+				for(StudentInfo s : sorted) {
+					msg += s.getInfo() + "\n\n";
+				}
+				messageBox(msg);
 			}
-			messageBox(msg);
 		}
 	}
 	
