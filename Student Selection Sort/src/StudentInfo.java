@@ -48,27 +48,27 @@ public class StudentInfo{
 
 	public void setTests(ArrayList<Double> t) {
 		tests = t;
-		calculateFinalAverage();
+		finalAverage = calculateFinalAverage();
 	}
 	
 	public void setTest(int pos, double score) {
 		tests.set(pos, score);
-		calculateFinalAverage();
+		finalAverage = calculateFinalAverage();
 	}
 	
 	public void setQuizes(ArrayList<Double> q) {
 		quizes = q;
-		calculateFinalAverage();
+		finalAverage = calculateFinalAverage();
 	}
 	
 	public void setQuiz(int pos, double score) {
 		quizes.set(pos, score);
-		calculateFinalAverage();
+		finalAverage = calculateFinalAverage();
 	}
 	
 	public void setHWAverage(double average) {
 		hwAverage = average;
-		calculateFinalAverage();
+		finalAverage = calculateFinalAverage();
 	}
 	
 	public String getName() {
