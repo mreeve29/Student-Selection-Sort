@@ -7,10 +7,12 @@ import BreezySwing.*;
 
 public class AddStudentDialog extends GBDialog {
 
+	//class objects
 	private AllStudents as;
 	private ArrayList<Double> tests;
 	private ArrayList<Double> quizes;
 	
+	//swing elements
 	private JLabel nameLabel = addLabel("Name:",1,1,1,1);
 	private JTextField nameField = addTextField("",1,2,1,1);
 	
@@ -33,6 +35,7 @@ public class AddStudentDialog extends GBDialog {
 	
 	private JButton addButton = addButton("Add Student",9,2,1,1);
 	
+	//button event listener
 	public void buttonClicked(JButton button) {
 		if(button == testButton) {
 			if(!testField.isValidNumber()) {
@@ -89,6 +92,7 @@ public class AddStudentDialog extends GBDialog {
 		}
 	}
 	
+	//constructor
 	public AddStudentDialog(JFrame parent, AllStudents all) {
 		super(parent);
 		as = all;
@@ -121,7 +125,6 @@ public class AddStudentDialog extends GBDialog {
 		}
 		return true;
 	}
-	
 	
 	private String getStudentInfo() {
 		String info = "";

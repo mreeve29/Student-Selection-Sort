@@ -1,14 +1,18 @@
 import java.util.ArrayList;
 
 public class AllStudents {
+	
+	//class object
 	private ArrayList<StudentInfo> students;
+	
+	//max students
 	public static final int MAX_STUDENTS = 15;
 	
 	public AllStudents() {
 		students = new ArrayList<StudentInfo>();
 	}
 	
-	
+	//sorts by average
 	public ArrayList<StudentInfo> averageSort(){
 		ArrayList<StudentInfo> sorted = new ArrayList<StudentInfo>(students);
 		ArrayList<Double> averages = new ArrayList<Double>();
@@ -38,6 +42,7 @@ public class AllStudents {
 		return sorted;
 	}
 	
+	//sorts by name
 	public ArrayList<StudentInfo> nameSort(){
 		ArrayList<StudentInfo> sorted = new ArrayList<StudentInfo>(students);
 		ArrayList<String> names = new ArrayList<String>();

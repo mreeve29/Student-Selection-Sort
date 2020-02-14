@@ -2,12 +2,14 @@ import java.util.ArrayList;
 
 public class StudentInfo{
 
+	//class objects
 	private String name;
 	private ArrayList<Double> tests;
 	private ArrayList<Double> quizes;
 	private double hwAverage;
 	private double finalAverage;
 	
+	//constructors
 	public StudentInfo() {
 		name = "";
 		tests = new ArrayList<Double>();
@@ -24,6 +26,7 @@ public class StudentInfo{
 		finalAverage = calculateFinalAverage();
 	}
 	
+	//calculates final average
 	private double calculateFinalAverage() {
 		//final average=0.5(Test Average)+0.3(Quiz Average)+0.2( Homework Average)
 		double test = average(tests);
@@ -46,6 +49,7 @@ public class StudentInfo{
 		name = n;
 	}
 
+	//setters
 	public void setTests(ArrayList<Double> t) {
 		tests = t;
 		finalAverage = calculateFinalAverage();
@@ -71,6 +75,7 @@ public class StudentInfo{
 		finalAverage = calculateFinalAverage();
 	}
 	
+	//getters
 	public String getName() {
 		return name;
 	}

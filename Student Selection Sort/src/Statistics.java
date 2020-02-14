@@ -2,6 +2,7 @@ import java.util.ArrayList;
 
 public class Statistics {
 	
+	//class objects
 	private ArrayList<Double> averages;
 	private AllStudents all;
 	
@@ -10,6 +11,7 @@ public class Statistics {
 		all = s;
 	}
 	
+	//finds mean
 	public double getMean() {
 		setAverages();
 		double total = 0;
